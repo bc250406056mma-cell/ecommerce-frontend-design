@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | E-Commerce Store</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="top-bar">
+        <div class="header-container">
+            <div class="search-container">
+                <span class="material-symbols-outlined search-icon">search</span>
+                <input type="text" placeholder="Search our collection...">
+            </div>
+            <div class="logo">E-Commerce Store</div>
+            <div class="header-icons">
+                <a href="../pages/sign-in.html" class="icon-link" aria-label="Account">
+                    <span class="material-symbols-rounded">account_circle</span>
+                </a>
+                <button class="cart-icon cart-toggle" type="button" aria-label="Open cart" aria-expanded="false" aria-controls="cart-panel">
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                    <span class="cart-count">0</span>
+                </button>
+                <div class="theme-switcher">
+                    <label for="theme-select">Theme</label>
+                    <select id="theme-select" class="theme-select" aria-label="Select theme">
+                        <option value="system">System</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="sepia">Sepia</option>
+                        <option value="ocean">Ocean</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="main-nav" aria-label="Primary">
+        <ul class="nav-links">
+            <li><a href="../main/home.html">Home</a></li>
+            <li><a href="new-arrivals.html">New Arrivals</a></li>
+            <li><a href="shop-all.html">Shop All</a></li>
+            <li><a href="best-sellers.html">Best Sellers</a></li>
+            <li><a href="collections.html">Collections</a></li>
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<aside class="cart-panel" id="cart-panel" aria-hidden="true">
+    <div class="cart-panel-header">
+        <h3>Your Cart</h3>
+        <button type="button" class="cart-close" aria-label="Close cart">Close</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total</span>
+            <span id="cart-total">$0.00</span>
+        </div>
+        <button type="button" class="product-action" id="clear-cart">Clear Cart</button>
+    </div>
+</aside>
+<div class="cart-overlay" id="cart-overlay"></div>
+
+<main>
+    <section class="section-padding product-details-page" data-product-details aria-labelledby="product-detail-title">
+        <div class="product-gallery">
+            <img loading="eager" decoding="async" src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=1200&q=80" alt="Tailored beige blazer product image">
+        </div>
+
+        <div class="product-details-copy">
+            <p class="hero-eyebrow">Signature Collection</p>
+            <h1 id="product-detail-title">Tailored Beige Blazer</h1>
+            <p class="product-detail-meta">SKU: TBB-2026 | Material: Premium Wool Blend</p>
+            <p class="product-detail-price">$129.00</p>
+            <p class="product-detail-description">
+                A modern tailored blazer with a clean silhouette and structured shoulders. Designed for versatile
+                styling from office-ready looks to elevated casual wear.
+            </p>
+
+            <label class="size-label" for="product-size">Select Size</label>
+            <select id="product-size" class="size-select" name="product-size">
+                <option value="">Choose size</option>
+                <option value="s">Small</option>
+                <option value="m">Medium</option>
+                <option value="l">Large</option>
+                <option value="xl">X-Large</option>
+            </select>
+            <p class="size-error" hidden>Please select a size before adding this item to cart.</p>
+
+            <div class="product-detail-actions">
+                <button
+                    class="product-action"
+                    type="button"
+                    data-add-to-cart
+                    data-product-id="tailored-beige-blazer"
+                    data-product-name="Tailored Beige Blazer"
+                    data-product-price="129"
+                    data-product-image="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=900&q=80"
+                >
+                    Buy Now
+                </button>
+                <a class="details-secondary" href="shop-all.html">Back to Listing</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding details-section" aria-label="Customer reviews and related products">
+        <div class="details-grid">
+            <article class="detail-panel">
+                <h3>Customer Reviews</h3>
+                <p><strong>4.8/5</strong> based on 128 verified ratings.</p>
+                <ul>
+                    <li>Premium fabric quality and accurate fit.</li>
+                    <li>Excellent finishing and comfortable lining.</li>
+                    <li>Great for formal and semi-formal outfits.</li>
+                </ul>
+            </article>
+            <article class="detail-panel">
+                <h3>Related Products</h3>
+                <ul>
+                    <li><a href="shop-all.html">Premium Cotton Shirt</a></li>
+                    <li><a href="shop-all.html">Classic White Sneakers</a></li>
+                    <li><a href="shop-all.html">Minimal Shoulder Bag</a></li>
+                </ul>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <p>Curating the finest collection of timeless pieces for your home and lifestyle. Quality meets classic design.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Customer Care</h3>
+            <ul>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Returns & Exchanges</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Size Guide</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Store Locator</a></li>
+                <li><a href="#">Affiliates</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Newsletter</h3>
+            <p>Join our list for exclusive previews.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email">
+                <button type="submit">Join</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 E-Commerce Store. All rights reserved.
+    </div>
+</footer>
+
+<script src="../js/script.js" defer></script>
+</body>
+</html>

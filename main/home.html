@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | E-Commerce Store</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="top-bar">
+        <div class="header-container">
+            <div class="search-container">
+                <span class="material-symbols-outlined search-icon">search</span>
+                <input type="text" placeholder="Search our collection...">
+            </div>
+
+            <div class="logo">E-Commerce Store</div>
+
+            <div class="header-icons">
+                <a href="../pages/sign-in.html" class="icon-link" aria-label="Account">
+                    <span class="material-symbols-rounded">account_circle</span>
+                </a>
+                <button class="cart-icon cart-toggle" type="button" aria-label="Open cart" aria-expanded="false" aria-controls="cart-panel">
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                    <span class="cart-count">0</span>
+                </button>
+                <div class="theme-switcher">
+                    <label for="theme-select">Theme</label>
+                    <select id="theme-select" class="theme-select" aria-label="Select theme">
+                        <option value="system">System</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="sepia">Sepia</option>
+                        <option value="ocean">Ocean</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Primary">
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="../products/new-arrivals.html">New Arrivals</a></li>
+            <li><a href="../products/shop-all.html">Shop All</a></li>
+            <li><a href="../products/best-sellers.html">Best Sellers</a></li>
+            <li><a href="../products/collections.html">Collections</a></li>
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<aside class="cart-panel" id="cart-panel" aria-hidden="true">
+    <div class="cart-panel-header">
+        <h3>Your Cart</h3>
+        <button type="button" class="cart-close" aria-label="Close cart">Close</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total</span>
+            <span id="cart-total">$0.00</span>
+        </div>
+        <button type="button" class="product-action" id="clear-cart">Clear Cart</button>
+    </div>
+</aside>
+<div class="cart-overlay" id="cart-overlay"></div>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-eyebrow">New Season 2026</p>
+            <h1>Curated Everyday Luxury</h1>
+            <p>Discover elevated essentials designed for modern living and timeless style.</p>
+            <div class="hero-actions">
+                <a class="btn-primary" href="../products/shop-all.html">Shop Collection</a>
+                <a class="btn-secondary" href="../products/new-arrivals.html">Explore New Arrivals</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding feature-section" aria-labelledby="featured-categories-title">
+        <div class="section-head">
+            <h2 class="section-title align-left" id="featured-categories-title">Featured Categories</h2>
+            <a class="section-link" href="../products/shop-all.html">View all products</a>
+        </div>
+        <div class="feature-grid">
+            <article class="feature-card feature-card-large">
+                <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=80" alt="Premium handbags collection">
+                <div class="feature-card-content">
+                    <p class="feature-kicker">Accessories</p>
+                    <h3>Statement Bags</h3>
+                    <a href="../products/collections.html">Shop now</a>
+                </div>
+            </article>
+            <article class="feature-card">
+                <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?auto=format&fit=crop&w=1200&q=80" alt="Modern sneakers on display">
+                <div class="feature-card-content">
+                    <p class="feature-kicker">Footwear</p>
+                    <h3>Urban Sneakers</h3>
+                    <a href="../products/best-sellers.html">Shop now</a>
+                </div>
+            </article>
+            <article class="feature-card">
+                <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=1200&q=80" alt="Classic formalwear outfit">
+                <div class="feature-card-content">
+                    <p class="feature-kicker">Apparel</p>
+                    <h3>Tailored Edit</h3>
+                    <a href="../products/new-arrivals.html">Shop now</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="section-padding promo-strip" aria-label="Promotional highlights">
+        <article class="promo-item">
+            <h3>Free Delivery</h3>
+            <p>Enjoy free shipping on all domestic orders above $75.</p>
+        </article>
+        <article class="promo-item">
+            <h3>Easy Returns</h3>
+            <p>30-day hassle-free returns with instant refund processing.</p>
+        </article>
+        <article class="promo-item">
+            <h3>Member Benefits</h3>
+            <p>Unlock early drops and exclusive pricing as a member.</p>
+        </article>
+    </section>
+
+    <section class="section-padding" aria-labelledby="home-featured-title">
+        <h2 class="section-title" id="home-featured-title">Featured Picks</h2>
+        <div class="product-grid">
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80" alt="Premium cotton shirt">
+                </div>
+                <h3 class="product-title">Premium Cotton Shirt</h3>
+                <p class="product-price">$49.00</p>
+                <button class="product-action" type="button" data-add-to-cart data-product-id="premium-cotton-shirt" data-product-name="Premium Cotton Shirt" data-product-price="49" data-product-image="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80">Buy Now</button>
+            </article>
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1511556820780-d912e42b4980?auto=format&fit=crop&w=900&q=80" alt="Classic leather sneakers">
+                </div>
+                <h3 class="product-title">Classic Leather Sneakers</h3>
+                <p class="product-price">$89.00</p>
+                <button class="product-action" type="button" data-add-to-cart data-product-id="classic-leather-sneakers" data-product-name="Classic Leather Sneakers" data-product-price="89" data-product-image="https://images.unsplash.com/photo-1511556820780-d912e42b4980?auto=format&fit=crop&w=900&q=80">Buy Now</button>
+            </article>
+            <article class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=80" alt="Minimal shoulder bag">
+                </div>
+                <h3 class="product-title">Minimal Shoulder Bag</h3>
+                <p class="product-price">$69.00</p>
+                <button class="product-action" type="button" data-add-to-cart data-product-id="minimal-shoulder-bag" data-product-name="Minimal Shoulder Bag" data-product-price="69" data-product-image="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=900&q=80">Buy Now</button>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <p>Curating the finest collection of timeless pieces for your home and lifestyle. Quality meets classic design.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Customer Care</h3>
+            <ul>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Returns & Exchanges</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Size Guide</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Store Locator</a></li>
+                <li><a href="#">Affiliates</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Newsletter</h3>
+            <p>Join our list for exclusive previews.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email">
+                <button type="submit">Join</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 E-Commerce Store. All rights reserved.
+    </div>
+</footer>
+
+<script src="../js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | E-Commerce Store</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="top-bar">
+        <div class="header-container">
+            <div class="search-container">
+                <span class="material-symbols-outlined search-icon">search</span>
+                <input type="text" placeholder="Search our collection...">
+            </div>
+            <div class="logo">E-Commerce Store</div>
+            <div class="header-icons">
+                <a href="sign-in.html" class="icon-link" aria-label="Account">
+                    <span class="material-symbols-rounded">account_circle</span>
+                </a>
+                <button class="cart-icon cart-toggle" type="button" aria-label="Open cart" aria-expanded="false" aria-controls="cart-panel">
+                    <span class="material-symbols-rounded">shopping_bag</span>
+                    <span class="cart-count">0</span>
+                </button>
+                <div class="theme-switcher">
+                    <label for="theme-select">Theme</label>
+                    <select id="theme-select" class="theme-select" aria-label="Select theme">
+                        <option value="system">System</option>
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="sepia">Sepia</option>
+                        <option value="ocean">Ocean</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Primary">
+        <ul class="nav-links">
+            <li><a href="../main/home.html">Home</a></li>
+            <li><a href="../products/new-arrivals.html">New Arrivals</a></li>
+            <li><a href="../products/shop-all.html">Shop All</a></li>
+            <li><a href="../products/best-sellers.html">Best Sellers</a></li>
+            <li><a href="../products/collections.html">Collections</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<aside class="cart-panel" id="cart-panel" aria-hidden="true">
+    <div class="cart-panel-header">
+        <h3>Your Cart</h3>
+        <button type="button" class="cart-close" aria-label="Close cart">Close</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="cart-footer">
+        <div class="cart-total">
+            <span>Total</span>
+            <span id="cart-total">$0.00</span>
+        </div>
+        <button type="button" class="product-action" id="clear-cart">Clear Cart</button>
+    </div>
+</aside>
+<div class="cart-overlay" id="cart-overlay"></div>
+
+<main>
+    <section class="section-padding" aria-labelledby="contact-title">
+        <h1 class="section-title" id="contact-title">Contact</h1>
+
+        <div style="max-width: 900px; margin: 0 auto; color: var(--text-muted); line-height: 1.9;">
+            <p>Have a question about an order, sizing, or our collections? Send us a message and we’ll reply within 1–2 business days.</p>
+            <p style="margin-top: 0.7rem;"><strong style="color: var(--text-dark);">Email:</strong> support@ecommercestore.test</p>
+            <p><strong style="color: var(--text-dark);">Hours:</strong> Mon–Fri, 9:00 AM – 6:00 PM</p>
+        </div>
+
+        <form style="max-width: 900px; margin: 2rem auto 0; display: grid; gap: 0.8rem;">
+            <input style="padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--input-bg); color: var(--text-dark);" type="text" placeholder="Your Name" required>
+            <input style="padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--input-bg); color: var(--text-dark);" type="email" placeholder="Your Email" required>
+            <textarea style="padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--input-bg); color: var(--text-dark); min-height: 140px; resize: vertical;" placeholder="Message" required></textarea>
+            <button class="product-action" type="submit" style="width: fit-content;">Send Message</button>
+        </form>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <p>Curating the finest collection of timeless pieces for your home and lifestyle. Quality meets classic design.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Customer Care</h3>
+            <ul>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Returns & Exchanges</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Size Guide</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Store Locator</a></li>
+                <li><a href="#">Affiliates</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Newsletter</h3>
+            <p>Join our list for exclusive previews.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your Email">
+                <button type="submit">Join</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 E-Commerce Store. All rights reserved.
+    </div>
+</footer>
+
+<script src="../js/script.js" defer></script>
+</body>
+</html>

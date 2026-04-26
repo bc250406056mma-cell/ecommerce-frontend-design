@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Methods | E-Commerce Store</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+<main class="payment-page section-padding">
+    <div class="payment-page-card">
+        <h1>Select Payment Method</h1>
+        <p class="payment-page-subtitle">Secure checkout with Pakistan and international payment options.</p>
+
+        <div class="payment-method-icons" aria-hidden="true">
+            <span class="material-symbols-rounded">credit_card</span>
+            <span class="material-symbols-rounded">account_balance</span>
+            <span class="material-symbols-rounded">account_balance_wallet</span>
+            <span class="material-symbols-rounded">payments</span>
+        </div>
+
+        <p class="payment-total-line">Total Payable: <strong id="payment-total">$0.00</strong></p>
+
+        <section class="payment-methods-block" aria-label="Pakistan and international payment methods">
+            <h2 class="payment-methods-title">Pakistan Methods</h2>
+            <div class="payment-method-grid">
+                <button class="payment-method-chip" type="button" data-method-value="Easypaisa">
+                    <span class="material-symbols-rounded">account_balance_wallet</span>Easypaisa
+                </button>
+                <button class="payment-method-chip" type="button" data-method-value="JazzCash">
+                    <span class="material-symbols-rounded">wallet</span>JazzCash
+                </button>
+                <button class="payment-method-chip" type="button" data-method-value="HBL Konnect">
+                    <span class="material-symbols-rounded">account_balance</span>HBL Konnect
+                </button>
+                <button class="payment-method-chip" type="button" data-method-value="UBL Omni">
+                    <span class="material-symbols-rounded">currency_exchange</span>UBL Omni
+                </button>
+                <button class="payment-method-chip" type="button" data-method-value="NayaPay">
+                    <span class="material-symbols-rounded">payments</span>NayaPay
+                </button>
+                <button class="payment-method-chip" type="button" data-method-value="SadaPay">
+                    <span class="material-symbols-rounded">credit_card</span>SadaPay
+                </button>
+            </div>
+            <h2 class="payment-methods-title">International Methods</h2>
+            <div class="payment-method-grid">
+                <button class="payment-method-chip" type="button" data-method-value="Visa / Mastercard">
+                    <span class="material-symbols-rounded">credit_card</span>Visa / Mastercard
+                </button>
+                <button class="payment-method-chip" type="button" data-method-value="PayPal">
+                    <span class="material-symbols-rounded">payments</span>PayPal
+                </button>
+                <button class="payment-method-chip" type="button" data-method-value="Apple Pay">
+                    <span class="material-symbols-rounded">phone_iphone</span>Apple Pay
+                </button>
+                <button class="payment-method-chip" type="button" data-method-value="Google Pay">
+                    <span class="material-symbols-rounded">android</span>Google Pay
+                </button>
+                <button class="payment-method-chip" type="button" data-method-value="Stripe">
+                    <span class="material-symbols-rounded">language</span>Stripe
+                </button>
+                <button class="payment-method-chip" type="button" data-method-value="Bank Transfer">
+                    <span class="material-symbols-rounded">account_balance</span>Bank Transfer
+                </button>
+            </div>
+        </section>
+
+        <form id="payment-method-form" class="payment-form page-payment-form" novalidate>
+            <label>
+                Payment Method
+                <select name="payment-method" required>
+                    <option value="">Select method</option>
+                    <option value="Easypaisa">Easypaisa</option>
+                    <option value="JazzCash">JazzCash</option>
+                    <option value="HBL Konnect">HBL Konnect</option>
+                    <option value="UBL Omni">UBL Omni</option>
+                    <option value="NayaPay">NayaPay</option>
+                    <option value="SadaPay">SadaPay</option>
+                    <option value="Visa / Mastercard">Visa / Mastercard</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="Apple Pay">Apple Pay</option>
+                    <option value="Google Pay">Google Pay</option>
+                    <option value="Stripe">Stripe</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                </select>
+            </label>
+            <label>
+                Account / Card Holder Name
+                <input type="text" name="cardholder" required placeholder="John Doe">
+            </label>
+            <label>
+                Wallet Number / Email / IBAN
+                <input type="text" name="payment-handle" placeholder="03xx xxxxxxx / example@email.com / PK..">
+            </label>
+            <label>
+                Card Number
+                <input type="text" name="cardnumber" required placeholder="4242 4242 4242 4242">
+            </label>
+            <div class="payment-row">
+                <label>
+                    Expiry
+                    <input type="text" name="expiry" required placeholder="MM/YY">
+                </label>
+                <label>
+                    CVV
+                    <input type="password" name="cvv" required placeholder="123">
+                </label>
+            </div>
+            <p id="payment-form-error" class="payment-error" hidden>Please fill all payment details.</p>
+            <button type="submit" class="product-action pay-btn">Pay and Generate Bill</button>
+        </form>
+    </div>
+</main>
+<script src="../js/script.js" defer></script>
+</body>
+</html>
