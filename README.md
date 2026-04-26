@@ -1,22 +1,67 @@
-# E-Commerce Frontend (Desktop Only)
+# E-Commerce Frontend
 
-This project is a **desktop-only** HTML/CSS/JS implementation of an eCommerce UI.
+A modern, desktop-only e-commerce website built with HTML, CSS, and JavaScript.
 
-## Folder structure
+## Features
 
-- `index.html`: Landing page
-- `css/`: Global styles (`index.css`)
-- `js/`: Global scripts (`script.js`)
-- `assets/`: Images, fonts, icons
-- `products/`, `pages/`, `main/`, `header/`, `footer/`, `forms/`: Additional HTML pages
+- **Responsive Design**: Optimized for desktop viewing
+- **Theme Support**: Light/dark theme toggle
+- **Shopping Cart**: Interactive cart functionality
+- **User Account**: Sign in/sign up pages
+- **Product Pages**: Collections, best sellers, new arrivals, product details
+- **Additional Pages**: About, contact, FAQ, careers, privacy policy, terms of service, and more
 
-## Run
+## Folder Structure
 
-Open `index.html` in a browser.
+```
+├── index.html              # Landing page
+├── css/
+│   └── index.css          # Global styles
+├── js/
+│   └── script.js          # Global scripts
+├── assets/
+│   ├── background/        # Background images
+│   ├── fonts/             # Font files
+│   └── svg icons/         # SVG icons
+├── header/                # Header component pages
+├── main/                  # Main content pages
+├── pages/                 # Additional pages
+│   ├── about.html
+│   ├── contact.html
+│   ├── faq.html
+│   ├── careers.html
+│   ├── privacy-policy.html
+│   ├── terms-of-service.html
+│   └── ...
+├── products/              # Product pages
+│   ├── collections.html
+│   ├── best-sellers.html
+│   ├── new-arrivals.html
+│   └── product-details.html
+├── payments/
+│   └── payment_methods.html
+└── recepits/
+    └── recipt.html
+```
 
-## Notes (performance + maintainability)
+## Getting Started
 
-- Images use `loading="lazy"` + `decoding="async"` where applicable.
-- The header/footer styling is centralized in `css/index.css`.
-- UI behavior (theme, profile menu, cart, search filter) lives in `js/script.js`.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/bc250406056mma-cell/ecommerce-frontend-design.git
+   ```
+
+2. Open `index.html` in your browser
+
+## Technologies
+
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+- Google Fonts (Lato, Playfair Display, Plus Jakarta Sans)
+- Material Symbols
+
+## License
+
+MIT
 
