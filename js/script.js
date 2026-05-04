@@ -576,6 +576,39 @@ function setupPaymentMethodsPage() {
     const methodSelect = form.querySelector('select[name="payment-method"]');
     const methodCards = Array.from(document.querySelectorAll("[data-method-value]"));
 
+    // Get all field containers
+    const walletFields = document.querySelector('[data-field-type="wallet"]');
+    const cardFields = document.querySelector('[data-field-type="card"]');
+    const digitalFields = document.querySelector('[data-field-type="digital"]');
+    const bankFields = document.querySelector('[data-field-type="bank"]');
+
+    // Function to show/hide fields based on payment method
+    function updateFieldVisibility(method) {
+        // Hide all fields first
+        if (walletFields) walletFields.classList.remove("active");
+        if (cardFields) cardFields.classList.remove("active");
+        if (digitalFields) digitalFields.classList.remove("active");
+        if (bankFields) bankFields.classList.remove("active");
+
+        // Pakistani mobile wallets
+        if (["Easypaisa", "JazzCash", "HBL Konnect", "UBL Omni", "NayaPay", "SadaPay"].includes(method)) {
+            if (walletFields) walletFields.classList.add("active");
+        }
+        // Card payments
+        else if (["Visa / Mastercard", "Stripe"].includes(method)) {
+            if (cardFields) cardFields.classList.add("active");
+        }
+        // Digital wallets
+        else if (["PayPal", "Apple Pay", "Google Pay"].includes(method)) {
+            if (digitalFields) digitalFields.classList.add("active");
+        }
+        // Bank transfer
+        else if (["Bank Transfer"].includes(method)) {
+            if (bankFields) bankFields.classList.add("active");
+        }
+    }
+
+    // Handle chip selection
     for (const card of methodCards) {
         card.addEventListener("click", () => {
             const value = card.getAttribute("data-method-value") || "";
@@ -586,6 +619,14 @@ function setupPaymentMethodsPage() {
                 other.classList.remove("is-selected");
             }
             card.classList.add("is-selected");
+            updateFieldVisibility(value);
+        });
+    }
+
+    // Handle dropdown change
+    if (methodSelect instanceof HTMLSelectElement) {
+        methodSelect.addEventListener("change", () => {
+            updateFieldVisibility(methodSelect.value);
         });
     }
 
@@ -594,11 +635,21 @@ function setupPaymentMethodsPage() {
 
         const data = new FormData(form);
         const selectedMethod = String(data.get("payment-method") || "").trim();
-        const cardRequired = /(card|visa|mastercard|amex|stripe)/i.test(selectedMethod);
-        const fields = cardRequired
-            ? ["payment-method", "cardholder", "cardnumber", "expiry", "cvv"]
-            : ["payment-method", "cardholder", "payment-handle"];
-        const hasMissing = fields.some((field) => !String(data.get(field) || "").trim());
+        
+        // Determine required fields based on method
+        let requiredFields = ["payment-method", "cardholder"];
+        
+        if (["Visa / Mastercard", "Stripe"].includes(selectedMethod)) {
+            requiredFields = [...requiredFields, "cardnumber", "expiry", "cvv"];
+        } else if (["Easypaisa", "JazzCash", "HBL Konnect", "UBL Omni", "NayaPay", "SadaPay"].includes(selectedMethod)) {
+            requiredFields = [...requiredFields, "wallet-number", "cnic"];
+        } else if (["PayPal", "Apple Pay", "Google Pay"].includes(selectedMethod)) {
+            requiredFields = [...requiredFields, "email"];
+        } else if (["Bank Transfer"].includes(selectedMethod)) {
+            requiredFields = [...requiredFields, "iban", "bank-name", "branch-code"];
+        }
+
+        const hasMissing = requiredFields.some((field) => !String(data.get(field) || "").trim());
         if (hasMissing) {
             if (errorNode instanceof HTMLElement) errorNode.hidden = false;
             return;

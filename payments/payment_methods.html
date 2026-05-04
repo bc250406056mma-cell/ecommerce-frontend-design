@@ -70,7 +70,7 @@
         <form id="payment-method-form" class="payment-form page-payment-form" novalidate>
             <label>
                 Payment Method
-                <select name="payment-method" required>
+                <select name="payment-method" id="payment-method-select" required>
                     <option value="">Select method</option>
                     <option value="Easypaisa">Easypaisa</option>
                     <option value="JazzCash">JazzCash</option>
@@ -86,28 +86,67 @@
                     <option value="Bank Transfer">Bank Transfer</option>
                 </select>
             </label>
+            
+            <!-- Common field: Account Name -->
             <label>
                 Account / Card Holder Name
                 <input type="text" name="cardholder" required placeholder="John Doe">
             </label>
-            <label>
-                Wallet Number / Email / IBAN
-                <input type="text" name="payment-handle" placeholder="03xx xxxxxxx / example@email.com / PK..">
-            </label>
-            <label>
-                Card Number
-                <input type="text" name="cardnumber" required placeholder="4242 4242 4242 4242">
-            </label>
-            <div class="payment-row">
+
+            <!-- Mobile Wallet Fields -->
+            <div class="payment-fields" data-field-type="wallet">
                 <label>
-                    Expiry
-                    <input type="text" name="expiry" required placeholder="MM/YY">
+                    Wallet Number
+                    <input type="tel" name="wallet-number" placeholder="03xx xxxxxxx" pattern="03[0-9]{9}">
                 </label>
                 <label>
-                    CVV
-                    <input type="password" name="cvv" required placeholder="123">
+                    CNIC Number
+                    <input type="text" name="cnic" placeholder="12345-1234567-1">
                 </label>
             </div>
+
+            <!-- Card Fields -->
+            <div class="payment-fields" data-field-type="card">
+                <label>
+                    Card Number
+                    <input type="text" name="cardnumber" placeholder="4242 4242 4242 4242">
+                </label>
+                <div class="payment-row">
+                    <label>
+                        Expiry
+                        <input type="text" name="expiry" placeholder="MM/YY">
+                    </label>
+                    <label>
+                        CVV
+                        <input type="password" name="cvv" placeholder="123">
+                    </label>
+                </div>
+            </div>
+
+            <!-- PayPal / Digital Wallet Fields -->
+            <div class="payment-fields" data-field-type="digital">
+                <label>
+                    Email Address
+                    <input type="email" name="email" placeholder="example@email.com">
+                </label>
+            </div>
+
+            <!-- Bank Transfer Fields -->
+            <div class="payment-fields" data-field-type="bank">
+                <label>
+                    IBAN / Account Number
+                    <input type="text" name="iban" placeholder="PKxx XXXX XXXX XXXX XXXX">
+                </label>
+                <label>
+                    Bank Name
+                    <input type="text" name="bank-name" placeholder="HBL, UBL, MCB...">
+                </label>
+                <label>
+                    Branch Code
+                    <input type="text" name="branch-code" placeholder="XXXX">
+                </label>
+            </div>
+
             <p id="payment-form-error" class="payment-error" hidden>Please fill all payment details.</p>
             <button type="submit" class="product-action pay-btn">Pay and Generate Bill</button>
         </form>
